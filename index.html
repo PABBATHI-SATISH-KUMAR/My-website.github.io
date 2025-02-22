@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Metrics Predictor</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-heartbeat"></i> Health Metrics Predictor</h1>
+            <p>Calculate calories burned and assess heart disease risk</p>
+            <button id="themeToggle" class="theme-toggle"><i class="fas fa-adjust"></i> Toggle Theme</button>
+        </header>
+
+        <div class="form-container">
+            <div class="input-group">
+                <div class="form-field">
+                    <label for="gender">Gender</label>
+                    <select id="gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+
+                <div class="form-field">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" placeholder="Enter age" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="height">Height (cm)</label>
+                    <input type="number" id="height" placeholder="Enter height" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="weight">Weight (kg)</label>
+                    <input type="number" id="weight" placeholder="Enter weight" required>
+                </div>
+
+                <div class="form-field bmi-container">
+                    <label for="bmi">BMI</label>
+                    <div class="bmi-group">
+                        <input type="text" id="bmi" readonly>
+                        <span id="bmiStatus" class="bmi-status"></span>
+                    </div>
+                </div>
+
+                <div class="form-field">
+                    <label for="workout">Workout Type</label>
+                    <select id="workout" required>
+                        <option value="">Select Workout</option>
+                        <option value="Push">Push</option>
+                        <option value="Pull">Pull</option>
+                        <option value="Cardio">Cardio</option>
+                    </select>
+                </div>
+
+                <div class="form-field">
+                    <label for="duration">Duration (min)</label>
+                    <input type="number" id="duration" placeholder="Enter duration" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="heartRate">Heart Rate (BPM)</label>
+                    <input type="number" id="heartRate" placeholder="Enter heart rate" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="bodyTemp">Body Temperature</label>
+                    <input type="number" id="bodyTemp" placeholder="Enter body temperature" required>
+                </div>
+            </div>
+
+            <div class="warning" id="warning"></div>
+            
+            <button id="predict" class="predict-btn">
+                <i class="fas fa-calculator"></i> Calculate Predictions
+            </button>
+
+            <div class="results" id="results">
+                <div class="result-card calories">
+                    <h3><i class="fas fa-fire"></i> Calories Burned</h3>
+                    <p id="caloriesResult">-- kcal</p>
+                </div>
+                <div class="result-card risk">
+                    <h3><i class="fas fa-heart"></i> Heart Disease Risk</h3>
+                    <p id="riskResult">--</p>
+                </div>
+                <div class="suggestion" id="suggestion">
+                    <h3><i class="fas fa-lightbulb"></i> Suggestions</h3>
+                    <p id="suggestionResult">--</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
